@@ -5,6 +5,7 @@ import { useUser } from '../store/useSelector'
 import { NavigationContainer } from '@react-navigation/native'
 import Home from '../components/screens/Home'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import Course from '../components/screens/Course'
 
 const Stack = createNativeStackNavigator()
 
@@ -17,6 +18,7 @@ export default function Navigation() {
                     <NavigationContainer>
                         <Stack.Navigator>
                             <Stack.Screen name='Home' component={Home} options={{ headerShown: false }} />
+                            <Stack.Screen name='Course' component={Course} options={{ headerShown: false }} />
                         </Stack.Navigator>
                     </NavigationContainer>
                 </> : <Login />
