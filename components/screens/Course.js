@@ -1,18 +1,28 @@
-import { StyleSheet, Text, View } from "react-native";
+import { FlatList, StyleSheet, Text, View } from "react-native";
 import TabNavigation from "./TabNavigation";
 import Header from "./Header";
 import { Colors } from "../../utils/colors";
 import Title from "../ui/Title";
 import Block from "../ui/Block";
+import { CoursesData } from "../../utils/data";
+import { useNavigation } from "@react-navigation/native";
+
+
 
 export default function Course({ route }) {
+  const navigation = useNavigation()
   return (
     <>
       <Header name={route.name} />
       <View style={styles.container}>
         <Title text={"Courses"} />
-        <Block img={require("../../assets/education.png")} block_style={{height:70,marginTop:15}} img_style={{width:50,height:50}} value={"Elementary (English)"} title={"12 lessons"} />
-        <Block img={require("../../assets/education.png")} block_style={{height:70,marginTop:15}} img_style={{width:50,height:50}} value={"Beginner (English)"} title={"10 lessons"} />
+        <FlatList data={CoursesData} renderItem={({ item }) => <Block
+          onPress={() => {
+            navigation.navigate('Units', { unitId: item.id ,title:item.title})
+          }} img={item.img} block_style={{ height: 70, marginTop: 15 }} img_style={{ width: 50, height: 50 }} value={item.title}
+          title={`${item.lessons.length} lessons`} />}
+
+          keyExtractor={item => item.id} />
       </View>
       <TabNavigation name={route.name} />
     </>
@@ -25,5 +35,6 @@ const styles = StyleSheet.create({
     paddingTop: 80,
     paddingLeft: 15,
     paddingRight: 15,
+    flex:1
   },
 });

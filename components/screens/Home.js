@@ -1,11 +1,12 @@
-import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
+import { FlatList, Image, ScrollView, StyleSheet, Text, View } from "react-native";
 import TabNavigation from "./TabNavigation";
 import Header from "./Header";
 import { Colors } from "../../utils/colors";
 import Title from "../ui/Title";
 import Block from "../ui/Block";
+import { Groups } from "../../utils/data";
 
-export default function Home({ route }) {
+export default function Home({ route, navigation }) {
   return (
     <>
       <Header name={route.name} />
@@ -52,28 +53,31 @@ export default function Home({ route }) {
           />
         </View>
         <Title text={"Groups"} style={{ marginTop: 30 }} />
-        <Block
-          img={require("../../assets/education.png")}
-          value={"English (Elementary)"}
-          title={"14:00-16:00"}
-          block_style={{ height: 70, width: "60%", marginTop: 10 }}
-          title_style={styles.BlockTitle2}
-        />
+        <FlatList data={Groups} renderItem={({ item }) => {
+          return <Block
+            img={require("../../assets/education.png")}
+            value={item.title}
+            title={item.time}
+            block_style={{ height: 70, width: "calc(100% - 40% * 1vh)", marginTop: 10 }}
+            title_style={styles.BlockTitle2}
+            onPress={() => navigation.navigate('Level', { title: item.title, id: item.id })}
+          />
+        }} keyExtractor={(item) => item.id} />
         <Title text={"Games"} style={{ marginTop: 30 }} />
         <View style={styles.Blocks}>
           <Block
             img={require("../../assets/gaming.png")}
             block_style={{
               flexDirection: "column",
-              width: "40%",
+              width: "50%",
               alignItems: "center",
               justifyContent: "center",
               marginTop: 10,
-              paddingTop:5,
-              paddingBottom:5,
-              paddingLeft:0,
+              paddingTop: 5,
+              paddingBottom: 5,
+              paddingLeft: 0,
             }}
-            img_style={{ width: 60,height:60 }}
+            img_style={{ width: 60, height: 60 }}
             value={"Translate Words"}
             title={"5 level"}
             title_style={{ ...styles.BlockTitle2, textAlign: "center" }}

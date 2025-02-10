@@ -65,7 +65,6 @@ export default function TabNavigation({ name }) {
 
 const styles = StyleSheet.create({
   container: {
-    position: "absolute",
     bottom: 20,
     left: 25,
     width: "90%",

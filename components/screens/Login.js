@@ -29,7 +29,7 @@ export default function Login() {
             <TextField placeholder={'password'} state={password} setState={setPassword} IssecureTextEntry={true} Style={{ marginTop: 15, gap: 5 }} />
             <Text style={styles.forgetPassword_text}>Forget Password</Text>
             <Text style={styles.forgetPassword_intro_text}>You will receive an SMS verification that may apply message and data rates</Text>
-            <Button text={"Log in"} onClick={handleLogIn} container_style={{ marginTop: "100%" }} />
+            <Button text={"Log in"} onClick={handleLogIn} container_style={{ marginTop: "80%" }} />
         </View>
     )
 }
