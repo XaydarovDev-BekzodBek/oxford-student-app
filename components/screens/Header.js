@@ -2,21 +2,19 @@ import { Image, StyleSheet, Text, TouchableHighlight, View } from 'react-native'
 import { Colors } from '../../utils/colors'
 import { useUser } from '../../store/useSelector'
 import Ionicons from '@expo/vector-icons/Ionicons';
+import { useNavigation } from '@react-navigation/native';
 
-export default function Header({ name }) {
+export default function Header() {
     const user = useUser()
-
-    const data = ['Profile']
-    if (data.includes(name)) {
-        return null
-    }
-
+    const navigation = useNavigation()
     return (
         <View style={styles.container}>
-            <View style={{ flexDirection: "row", alignItems: "center", gap: 10 }}>
-                <Image source={require("../../assets/cat.jpg")} style={styles.cat_img} />
-                <Text style={styles.name_text}>{user?.surname[0].toUpperCase() + user?.surname.slice(1, user?.surname.length)} {user?.name[0].toUpperCase() + user?.name.slice(1, user?.name.length)}</Text>
-            </View>
+            <TouchableHighlight  onPress={() => navigation.navigate("Profile")}>
+                <View style={{ flexDirection: "row", alignItems: "center", gap: 10 }}>
+                    <Image source={require("../../assets/cat.jpg")} style={styles.cat_img} />
+                    <Text style={styles.name_text}>{user?.surname[0].toUpperCase() + user?.surname.slice(1, user?.surname.length)} {user?.name[0].toUpperCase() + user?.name.slice(1, user?.name.length)}</Text>
+                </View>
+            </TouchableHighlight>
             <TouchableHighlight>
                 <View>
                     <Ionicons name="notifications" size={24} color="white" />

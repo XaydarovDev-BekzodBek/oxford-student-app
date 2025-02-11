@@ -11,6 +11,9 @@ import { Colors } from '../utils/colors'
 import Group from '../components/screens/Group'
 import Level from '../components/screens/Level'
 import Davomat from '../components/screens/Davomat'
+import Paids from '../components/screens/Paids'
+import Exams from '../components/screens/Exams'
+import Profile from '../components/screens/Profile'
 
 const Stack = createNativeStackNavigator()
 
@@ -38,13 +41,34 @@ export default function Navigation() {
                                 },
                                 headerTintColor: 'white',
                                 title: "English" || route.params.title
-                            })} /> */}
+                            })} />
                             <Stack.Screen name='Davomat' component={Davomat} options={({ route }) => ({
                                 headerTitleAlign: 'center', headerStyle: {
                                     backgroundColor: Colors.blue,
                                 },
                                 headerTintColor: 'white',
                                 title: "Davomat"
+                            })} />
+                            <Stack.Screen name='Paids' component={Paids} options={({ }) => ({
+                                headerTitleAlign: 'center', headerStyle: {
+                                    backgroundColor: Colors.blue,
+                                },
+                                headerTintColor: 'white',
+                                title: "To`lovlar"
+                            })} />
+                            <Stack.Screen name='Exams' component={Exams} options={({ }) => ({
+                                headerTitleAlign: 'center', headerStyle: {
+                                    backgroundColor: Colors.blue,
+                                },
+                                headerTintColor: 'white',
+                                title: "Imtixonlar"
+                            })} /> */}
+                            <Stack.Screen name='Profile' component={Profile} options={({ }) => ({
+                                headerTitleAlign: 'center', headerStyle: {
+                                    backgroundColor: Colors.blue,
+                                },
+                                headerTintColor: 'white',
+                                title: "Profile"
                             })} />
                         </Stack.Navigator>
                     </NavigationContainer>

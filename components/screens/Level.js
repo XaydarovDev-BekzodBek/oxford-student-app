@@ -19,8 +19,8 @@ export default function Level({ route, navigation }) {
           <Block img={require('../../assets/davomat.png')} onPress={() => navigation.navigate('Davomat')} value={'Davomat'} value_style={{ margintTop: 30, fontSize: 25 }} img_style={{ width: 70, height: 70 }} block_style={{ paddingLeft: 0, paddingTop: 15, width: "47%", height: 150, flexDirection: 'column' }} />
         </View>
         <View style={{ ...styles.Blocks, marginTop: 15 }}>
-          <Block img={require('../../assets/money.png')} onPress={() => navigation.navigate('Course')} value={'To`lovlar'} value_style={{ margintTop: 30, fontSize: 25 }} img_style={{ width: 70, height: 70 }} block_style={{ paddingLeft: 0, paddingTop: 15, width: "47%", height: 150, flexDirection: 'column' }} />
-          <Block img={require('../../assets/img1.png')} onPress={() => navigation.navigate('Davomat')} value={'Imtixonlar'} value_style={{ margintTop: 30, fontSize: 25 }} img_style={{ width: 70, height: 70 }} block_style={{ paddingLeft: 0, paddingTop: 15, width: "47%", height: 150, flexDirection: 'column' }} />
+          <Block img={require('../../assets/money.png')} onPress={() => navigation.navigate('Paids', { groupId: level.id })} value={'To`lovlar'} value_style={{ margintTop: 30, fontSize: 25 }} img_style={{ width: 70, height: 70 }} block_style={{ paddingLeft: 0, paddingTop: 15, width: "47%", height: 150, flexDirection: 'column' }} />
+          <Block img={require('../../assets/img1.png')} onPress={() => navigation.navigate('Exams',{groupId:level.id})} value={'Imtixonlar'} value_style={{ margintTop: 30, fontSize: 25 }} img_style={{ width: 70, height: 70 }} block_style={{ paddingLeft: 0, paddingTop: 15, width: "47%", height: 150, flexDirection: 'column' }} />
         </View>
         <Title text={'Group Information'} style={{ marginTop: 15 }} />
         <Block block_style={{ height: 80, marginTop: 15 }} img={require('../../assets/teacher.png')} title={'Teacher'} value={level.teacher} />

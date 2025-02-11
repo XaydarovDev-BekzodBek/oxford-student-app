@@ -93,7 +93,7 @@ export const Groups = [
         days: "Se-Pa-Sha",
         teacher: "Habibullayeva Roziya",
         exams: [],
-        orders: [
+        paids: [
             {
                 id: 1,
                 title: "Hodi::Mohinur Abdulayeva Bank hisobi to`langan",
@@ -108,8 +108,11 @@ export const Groups = [
             }
         ],
         davomat: [
-            1, 4, 6, 8, 11, 13
-        ]
+            { day: 3, year: 2025, month: 1 },
+            { day: 5, year: 2025, month: 1 },
+            { day: 7, year: 2025, month: 1 },
+        ],
+        group_name2: "English (kids) Elementary Juft 14-16 Roziya Groups"
     }
 ]
 

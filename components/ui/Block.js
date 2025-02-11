@@ -2,11 +2,12 @@ import { Image, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { Colors } from '../../utils/colors'
 
-export default function Block({ img, value, title, block_style, img_style, value_style, title_style, onPress }) {
+export default function Block({ img, value, title, block_style, img_style, value_style, title_style, onPress, value2, value2_style }) {
     return (
         <View style={{ ...styles.Block, ...block_style }} onClick={onPress}>
             <Image source={img} style={{ ...styles.BlockImage, ...img_style }} />
             <View>
+                <Text style={{ ...styles.Blockvalue2, ...value2_style }}>{value2}</Text>
                 <Text style={{ ...styles.BlockValue, ...value_style }}>{value}</Text>
                 <Text style={{ ...styles.BlockTitle, ...title_style }}>{title}</Text>
             </View>
@@ -40,4 +41,9 @@ const styles = StyleSheet.create({
         fontSize: 18,
         fontWeight: 600
     },
+    Blockvalue2: {
+        color: 'gray',
+        fontSize: 8,
+        fontWeight: 600
+    }
 })

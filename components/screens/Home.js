@@ -9,7 +9,7 @@ import { Groups } from "../../utils/data";
 export default function Home({ route, navigation }) {
   return (
     <>
-      <Header name={route.name} />
+      <Header />
       <ScrollView style={styles.container}>
         <View style={styles.Blocks}>
           <Block

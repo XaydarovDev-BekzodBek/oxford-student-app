@@ -9,11 +9,11 @@ import { useNavigation } from "@react-navigation/native";
 
 
 
-export default function Course({ route }) {
+export default function Course({route}) {
   const navigation = useNavigation()
   return (
     <>
-      <Header name={route.name} />
+      <Header  />
       <View style={styles.container}>
         <Title text={"Courses"} />
         <FlatList data={CoursesData} renderItem={({ item }) => <Block

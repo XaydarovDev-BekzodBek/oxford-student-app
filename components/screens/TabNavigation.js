@@ -11,11 +11,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import { useNavigation } from "@react-navigation/native";
 
-export default function TabNavigation({ name }) {
-  const data = ["Profile"];
-  if (data.includes(name)) {
-    return null;
-  }
+export default function TabNavigation({name}) {
   const navigation = useNavigation();
   const checkIcon = (iconName, icon1, icon2) => {
     return iconName === name ? icon1 : icon2;

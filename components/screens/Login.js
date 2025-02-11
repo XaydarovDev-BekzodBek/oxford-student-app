@@ -17,8 +17,10 @@ export default function Login() {
         if (password === "" || (phone === "" || phone.length != 9)) {
             Toast.show({ type: "error", text1: "Error", text2: "Log in qilish uchun ma`lumotlar kiriting" })
         } else {
+           if(password === "2778" && phone === "+998990072778"){
             dispatch(setUser({ password, phone, name: "bekzod", surname: "xaydarov" }))
             Toast.show({ type: "success", text1: "Success" })
+           }
         }
     }
     return (
